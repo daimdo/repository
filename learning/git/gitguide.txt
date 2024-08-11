@@ -1,0 +1,32 @@
+Clone Github repository and push-pull
+
+Copy HTTPS path from github
+Open Git Bash.
+
+Change the current working directory to the location where you want the cloned directory.
+Example: "cd C:/Users/nldam/git-repositories"
+
+Type git clone, and then paste the Github HTTPS URL you copied earlier.
+
+Open Folder in VSCode and navigate to your repository in your working directory to work with the repository. If you want to push your work to Github, save the file(s) first locally.
+
+In VSCode Bash terminal/Git Bash
+# Adds your changes and stages them for commit to remote repository. To unstage a file, use 'git reset HEAD YOUR-FILE'.
+# Add current file 
+$ "git add ."
+# Add all files in repository 
+$ "git add *"
+# Add specified files by extension
+$ "git add *.jpg"
+# Add all files within specific folder
+$ "git add images/*"
+
+# Commits the tracked changes and prepares them to be pushed to a remote repository. To remove this commit and modify the file, use 'git reset --soft HEAD~1' and commit and add the file again.
+$ "git commit -m 'Add existing file'"
+
+# Pushes the changes in your local repository up to the remote repository you specified as the origin
+$ "git push origin <YOUR_BRANCH>"
+Example: git push origin main
+
+# Pulls the changes from the remote repository in your local repository 
+$ "git pull"

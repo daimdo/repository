@@ -1,0 +1,19 @@
+To import packages, write "import <YOURPACKAGE>" in your Python file
+Various helpful packages:
+import re
+--> regular expressions. Find and extract (a group of) characters in a text
+
+import urllib
+--> define and handle sockets, making a url look like a file which can be transformed. Handles all HTTP protocol and header details
+
+import BeautifulSoup
+--> Python library for pulling data out of HTML and XML files
+
+import ssl
+--> import this package to ignore errors when SSL certificate errors occur
+
+import xml.etree.ElementTree
+--> built-in Python library used to parse and handle XML data
+
+import json
+--> built-in Python library used to parse and handle JSON data

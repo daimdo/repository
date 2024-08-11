@@ -1,0 +1,7 @@
+Hi, this is example text.
+You can use this to test out the program.
+
+Try modifying the text below so it matches the original text above.
+
+Hello, this exapmle is text.
+Everyon can be using this to testout the program.
