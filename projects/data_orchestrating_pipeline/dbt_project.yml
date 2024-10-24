@@ -1,0 +1,7 @@
+name: 'data_pipeline'
+version: '1.0'
+config-version: 2
+
+profile: 'default'
+
+model-paths: ["models"]

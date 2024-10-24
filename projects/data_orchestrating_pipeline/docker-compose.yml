@@ -1,0 +1,35 @@
+version: '3'
+services:
+  airflow:
+    image: apache/airflow:2.3.0
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=sqlite:////usr/local/airflow/airflow.db
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+      - ./logs:/usr/local/airflow/logs
+      - ./plugins:/usr/local/airflow/plugins
+      - ./data:/usr/local/airflow/data
+    ports:
+      - "8080:8080"
+    command: webserver
+
+  airflow_scheduler:
+    image: apache/airflow:2.3.0
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=sqlite:////usr/local/airflow/airflow.db
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+      - ./logs:/usr/local/airflow/logs
+      - ./plugins:/usr/local/airflow/plugins
+      - ./data:/usr/local/airflow/data
+    command: scheduler
+
+  dbt:
+    image: dbt-labs/dbt:latest
+    volumes:
+      - ./dbt:/usr/app/dbt
+      - ./data:/usr/local/airflow/data
+    working_dir: /usr/app/dbt
